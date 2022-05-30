@@ -3,7 +3,7 @@ import React from "react";
 import githubStateContext from "./context";
 import { Octokit } from "@octokit/core";
 const octokit = new Octokit({
-    auth: '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'
+    auth: process.env.REACT_APP_API_TOKEN
 })
 
 
