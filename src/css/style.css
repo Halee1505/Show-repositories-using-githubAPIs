@@ -1,0 +1,22 @@
+.content-overlay{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+p,.h5{
+    margin: 2px 2px!important;
+}
+.card-body{
+    padding: 5px!important;
+}
+Button{
+    margin: 2px 2px!important;
+}
+.overflow{
+    overflow: scroll;
+    height: 620px ;
+}
+th{
+    white-space: nowrap;
+}
