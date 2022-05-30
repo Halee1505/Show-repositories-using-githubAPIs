@@ -4,11 +4,8 @@ import '../../css/style.css';
 import { useState, useContext, useEffect } from 'react';
 
 export default function Repos({ users }) {
-    console.log(users)
     const githubState = useContext(githubStateContext);
     const [sortType, setSortType] = useState("most stars");
-
-
     const getRepos = async () => {
         await githubState.setRepos(repos => []);
         githubState.setRepos(repos => []);
@@ -22,8 +19,6 @@ export default function Repos({ users }) {
     }
         // eslint-disable-next-line
         , [users])
-    console.log(githubState.repos)
-
     githubState.setRepos(githubState.Sort(githubState.repos, sortType));
 
     return (

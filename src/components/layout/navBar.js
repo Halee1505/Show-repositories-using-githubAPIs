@@ -16,6 +16,7 @@ function Nvbar() {
     const onSubmit = (e) => {
         githubState.setShowRepos(false)
         githubState.setUser(user=>[])
+        githubState.setNotFoundUser(notFoundUser=>[])
         e.preventDefault();
         if (search.length !== 0) {
             async function set() {

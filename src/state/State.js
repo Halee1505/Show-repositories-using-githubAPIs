@@ -3,13 +3,14 @@ import React from "react";
 import githubStateContext from "./context";
 import { Octokit } from "@octokit/core";
 const octokit = new Octokit({
-    auth: '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'
+    auth: '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'
 })
 
 
 
 export const State = ({ children }) => {
     const [error, setError] = useState('');
+    const [notFoundUser, setNotFoundUser] = useState([]);
     const [searchUser, setSearchUser] = useState('');
     const [user, setUser] = useState([]);
     const [showUser, setShowUser] = useState([]);
@@ -25,11 +26,10 @@ export const State = ({ children }) => {
                 octokit.request('GET /users/{user}', {
                     user: u
                 }).then(response => {
-                    console.log("call state" + u)
                     setUser(user => user.concat(response.data));
                 }
                 ).catch(err => {
-                    setError(err.code);
+                    setNotFoundUser(notFoundUser => notFoundUser.concat(u));
                 }
                 );
             }
@@ -122,6 +122,7 @@ export const State = ({ children }) => {
             value={{
                 error,
                 user,
+                notFoundUser,
                 searchUser,
                 repos,
                 searchRepo,
@@ -129,6 +130,7 @@ export const State = ({ children }) => {
                 showUser,
                 setError,
                 setUser,
+                setNotFoundUser,
                 setSearchUser,
                 setRepos,
                 setSearchRepo,
