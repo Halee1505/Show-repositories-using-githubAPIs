@@ -2,9 +2,7 @@ import { useState, useEffect } from "react";
 import React from "react";
 import githubStateContext from "./context";
 import { Octokit } from "@octokit/core";
-const octokit = new Octokit({
-    auth: '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'
-})
+const octokit = new Octokit()
 
 
 
