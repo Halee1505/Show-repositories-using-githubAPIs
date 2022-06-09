@@ -11,3 +11,4 @@
     + Most popular original work : Based on stargazers count, forks  count, watchers count 
                     with forks count is only all children fork 
     + Most popular react: Similar to most popular and plus open issues count
+# Akatsuki-Store
